@@ -1,0 +1,1 @@
+savedcmd_scripts/kconfig/conf := /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  -fuse-ld=lld -o scripts/kconfig/conf scripts/kconfig/conf.o scripts/kconfig/confdata.o scripts/kconfig/expr.o scripts/kconfig/lexer.lex.o scripts/kconfig/menu.o scripts/kconfig/parser.tab.o scripts/kconfig/preprocess.o scripts/kconfig/symbol.o scripts/kconfig/util.o   

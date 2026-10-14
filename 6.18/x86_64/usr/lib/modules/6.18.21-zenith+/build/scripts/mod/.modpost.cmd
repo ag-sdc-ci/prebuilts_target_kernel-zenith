@@ -1,0 +1,1 @@
+savedcmd_scripts/mod/modpost := /opt/android-ndk/toolchains/llvm/prebuilt/linux-x86_64/bin/clang  -fuse-ld=lld -o scripts/mod/modpost scripts/mod/modpost.o scripts/mod/file2alias.o scripts/mod/sumversion.o scripts/mod/symsearch.o   

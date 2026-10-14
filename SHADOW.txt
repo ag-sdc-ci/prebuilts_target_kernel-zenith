@@ -1,0 +1,22 @@
+shadow prebuilt repo: kernel-zenith (target)
+  registry: linux-zenith-git 6.18.21-2 + linux-zenith-git-headers 6.18.21-2,
+            Forgejo ag-ci kernel_zenith release tag 2026-10-13
+            http://192.168.1.2:3002/ag-ci/kernel_zenith/releases/tag/2026-10-13
+            (also mirrored into the Forgejo Arch package registry,
+             owner ag-ci, repo android)
+  api-level: 32 (CI-built; branch 32-20261014; the kernel itself is
+            API-independent -> universal alias points at the same commit)
+  upstream: kernel/x86/zenith (github android-generic/kernel-zenith, 6.18
+            branch); recipe aur/kernel-zenith, CI ag-ci/kernel_zenith
+  sync path: kernel/prebuilts  (Google standard kernel prebuilt path;
+            content keyed TARGET_KERNEL_USE=6.18 TARGET_KERNEL_ARCH=x86_64
+            -> kernel/prebuilts/6.18/x86_64)
+  layout: extracted package trees at 6.18/x86_64/; .ko NOT flattened:
+            usr/lib/modules/6.18.21-zenith+/kernel/**   (linux-zenith-git:
+              modules, modules.builtin, modules.builtin.modinfo,
+              modules.order, pkgbase, vdso, vmlinuz)
+            usr/lib/modules/6.18.21-zenith+/build/**   (linux-zenith-git-headers)
+            kernel-6.18 -> usr/lib/modules/6.18.21-zenith+/vmlinuz
+              (Google kernel-$(TARGET_KERNEL_USE) image name)
+          pkg metadata dotfiles (.BUILDINFO/.MTREE/.PKGINFO) omitted.
+  date: 2026-10-14
